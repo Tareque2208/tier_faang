@@ -1,16 +1,7 @@
-# tier_faang
+# Tier Faang
 
-A new Flutter project.
+A roadmap to join FAANG.
 
-## Getting Started
+## Hey, Future Noogler
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is specificly focused on tracking daily tasks to join FAANG companies in 8-12 months. This time schedule will vary person to person. But You must follow the guidelines properly. Get rid of all distractions for this 1 year and build yourself for your future. This is going to be tough ride throughout the year. You got to give at least 5-6 hours per day. 5 days a week. So, around 1200 hours of study only(considering 6hrs/5days/10months). We are going to cover Prerequisite Knowledge, Algorithmic complexity / Big-O / Asymptotic analysis, Data Structures, Trees,Sorting,Graphs,Design Pattern, OOP, MVC/MVP, Networking, Unit Testing, Caching, Scheduling, Competitive Programmings, MySQL/NoSQL Databases, System Designs, Scalability, Data Handling, Interview Questions, Resume Development and so on. So, buckle up guys! It's gonna be verrrrrrrrry bumpy ride.
