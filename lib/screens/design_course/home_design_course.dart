@@ -1,3 +1,4 @@
+import 'package:tier_faang/components/filters_screen.dart';
 import 'package:tier_faang/main.dart';
 import 'package:flutter/material.dart';
 import 'package:tier_faang/screens/design_course/category_list_view.dart';
@@ -189,70 +190,92 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
 
   Widget getSearchBarUI() {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, left: 18),
+      padding: const EdgeInsets.only(top: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width * 0.75,
-            height: 64,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 8, bottom: 8),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: HexColor('#F8FAFB'),
-                  borderRadius: const BorderRadius.only(
-                    bottomRight: Radius.circular(13.0),
-                    bottomLeft: Radius.circular(13.0),
-                    topLeft: Radius.circular(13.0),
-                    topRight: Radius.circular(13.0),
-                  ),
+            height: 50,
+            child: Container(
+              decoration: BoxDecoration(
+                color: HexColor('#F8FAFB'),
+                borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(13.0),
+                  bottomLeft: Radius.circular(13.0),
+                  topLeft: Radius.circular(13.0),
+                  topRight: Radius.circular(13.0),
                 ),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 16, right: 16),
-                        child: TextFormField(
-                          style: TextStyle(
-                            fontFamily: 'WorkSans',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: DesignCourseAppTheme.nearlyBlue,
-                          ),
-                          keyboardType: TextInputType.text,
-                          decoration: InputDecoration(
-                            labelText: 'Search for course',
-                            border: InputBorder.none,
-                            helperStyle: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: HexColor('#B9BABC'),
-                            ),
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              letterSpacing: 0.2,
-                              color: HexColor('#B9BABC'),
-                            ),
-                          ),
-                          onEditingComplete: () {},
+              ),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: TextFormField(
+                        style: TextStyle(
+                          fontFamily: 'WorkSans',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: DesignCourseAppTheme.nearlyBlue,
                         ),
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          labelText: 'Search for course',
+                          border: InputBorder.none,
+                          helperStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: HexColor('#B9BABC'),
+                          ),
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            letterSpacing: 0.2,
+                            color: HexColor('#B9BABC'),
+                          ),
+                        ),
+                        onEditingComplete: () {},
                       ),
                     ),
-                    SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: Icon(Icons.search, color: HexColor('#B9BABC')),
-                    )
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    width: 60,
+                    height: 60,
+                    child: IconButton(
+                      color: DesignCourseAppTheme.darkerText,
+                      icon: Icon(Icons.search, color: HexColor('#B9BABC')),
+                      onPressed: () {
+                        Navigator.push<dynamic>(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => FiltersScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-          const Expanded(
-            child: SizedBox(),
+          Padding(
+            padding: const EdgeInsets.all(2),
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: DesignCourseAppTheme.nearlyBlue,
+                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Icon(
+                  Icons.sort,
+                  color: DesignCourseAppTheme.nearlyWhite,
+                ),
+              ),
+            ),
           )
         ],
       ),
@@ -270,7 +293,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Choose your',
+                  'Welcome',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
@@ -280,7 +303,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                   ),
                 ),
                 Text(
-                  'Design Course',
+                  'Dominic Toretto',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,

@@ -72,8 +72,7 @@ class CenterNextButton extends StatelessWidget {
                   height: 58,
                   width: 58 + (200 * _signUpMoveAnimation.value),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                        8 + 32 * (1 - _signUpMoveAnimation.value)),
+                    borderRadius: BorderRadius.circular(30),
                     color: Color(0xff132137),
                   ),
                   child: PageTransitionSwitcher(
@@ -180,7 +179,7 @@ class CenterNextButton extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          for (var i = 0; i < 4; i++)
+          for (var i = 0; i < 3; i++)
             Padding(
               padding: const EdgeInsets.all(4),
               child: AnimatedContainer(
@@ -191,7 +190,7 @@ class CenterNextButton extends StatelessWidget {
                       ? Color(0xff132137)
                       : Color(0xffE3E4E4),
                 ),
-                width: 10,
+                width: _selectedIndex == i ? 25 : 10,
                 height: 10,
               ),
             )

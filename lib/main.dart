@@ -28,13 +28,25 @@ class MyApp extends StatelessWidget {
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
     return MaterialApp(
-      title: 'Flutter UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
+      // routes: Routes.getRoute(),
+      // onGenerateRoute: (RouteSettings settings) {
+      //   if (settings.name!.contains('detail')) {
+      //     return CustomRoute<bool>(
+      //         builder: (BuildContext context) => ProductDetailPage());
+      //   } else {
+      //     return CustomRoute<bool>(
+      //         builder: (BuildContext context) => MainPage(
+      //               title: '',
+      //             ));
+      //   }
+      // },
+      // initialRoute: "MainPage",
       home: IntroductionAnimationScreen(),
     );
   }

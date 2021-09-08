@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tier_faang/screens/authenticate/sign_in.dart';
+import 'package:tier_faang/screens/authenticate/welcome_back_page.dart';
 import 'package:tier_faang/screens/design_course/home_design_course.dart';
 
 class Authenticate extends StatefulWidget {
@@ -11,7 +12,8 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: DesignCourseHomeScreen(),
+      child: WelcomeBackPage(),
+      // child: DesignCourseHomeScreen(),
     );
   }
 }

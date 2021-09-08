@@ -7,7 +7,7 @@ import '../models/base.dart';
 class User {
   String dbName = USERS_DB;
   NetworkUtil _netUtil = new NetworkUtil();
-  DatabaseHelper _db = new DatabaseHelper();
+  // DatabaseHelper _db = new DatabaseHelper();
 
   int id;
   String _username;
@@ -33,11 +33,11 @@ class User {
   // }
 
   //Updating Local DB
-  User.updatePoints(int points) {
-    print("update Points in DB");
-    print(points);
-    _db.findOneAndUpdate(this.dbName, '1', [], {'points': points});
-  }
+  // User.updatePoints(int points) {
+  //   print("update Points in DB");
+  //   print(points);
+  //   _db.findOneAndUpdate(this.dbName, '1', [], {'points': points});
+  // }
 
   String get username => _username;
   String get apiToken => _apiToken;
