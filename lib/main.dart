@@ -7,8 +7,6 @@ import 'package:tier_faang/screens/intro/introduction_animation_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-  // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown
