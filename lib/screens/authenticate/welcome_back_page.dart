@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tier_faang/app_theme.dart';
 import 'package:tier_faang/screens/design_course/design_course_app_theme.dart';
+import 'package:tier_faang/screens/design_course/home_design_course.dart';
 
 import 'register_page.dart';
 
@@ -10,13 +12,15 @@ class WelcomeBackPage extends StatefulWidget {
 }
 
 class _WelcomeBackPageState extends State<WelcomeBackPage> {
-  TextEditingController email =
+  TextEditingController emailController =
       TextEditingController(text: 'example@email.com');
 
-  TextEditingController password = TextEditingController(text: '12345678');
+  TextEditingController passwordController =
+      TextEditingController(text: '12345678');
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
     Widget welcomeBack = Text(
       'Welcome Back Dominac,',
       style: TextStyle(
@@ -46,9 +50,15 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
       left: MediaQuery.of(context).size.width / 4,
       bottom: 40,
       child: InkWell(
-        onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => RegisterPage()));
+        onTap: () async {
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
+              email: emailController.text, password: passwordController.text);
+          setState(() {
+            if (!(user == null)) {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => DesignCourseHomeScreen()));
+            }
+          });
         },
         child: Container(
           width: MediaQuery.of(context).size.width / 3,
@@ -93,14 +103,14 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
-                    controller: email,
+                    controller: emailController,
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
-                    controller: password,
+                    controller: passwordController,
                     style: TextStyle(fontSize: 16.0),
                     obscureText: true,
                   ),

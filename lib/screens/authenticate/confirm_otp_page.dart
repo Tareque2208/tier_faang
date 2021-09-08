@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tier_faang/screens/authenticate/sign_in.dart';
 import 'package:tier_faang/screens/design_course/design_course_app_theme.dart';
 import 'package:tier_faang/screens/design_course/home_design_course.dart';
 

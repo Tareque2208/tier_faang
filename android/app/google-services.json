@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "10317283737",
+    "project_id": "sapiens-station-academy",
+    "storage_bucket": "sapiens-station-academy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10317283737:android:75be92fb6f4e0ea6c81308",
+        "android_client_info": {
+          "package_name": "com.sapiensstation.tier_faang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10317283737-6f93hl8428nsad0cm60op66ufhf79q0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdPZS1RdK-UrQrvfkdDm12BNx3LWNlfOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10317283737-6f93hl8428nsad0cm60op66ufhf79q0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tier_faang/screens/design_course/category_list_view.dart';
 import 'package:tier_faang/screens/design_course/course_info_screen.dart';
 import 'package:tier_faang/screens/design_course/popular_course_list_view.dart';
+import '../../app_theme.dart';
 import 'design_course_app_theme.dart';
 
 class DesignCourseHomeScreen extends StatefulWidget {
@@ -190,93 +191,106 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
 
   Widget getSearchBarUI() {
     return Padding(
-      padding: const EdgeInsets.only(top: 5),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width * 0.75,
-            height: 50,
-            child: Container(
-              decoration: BoxDecoration(
-                color: HexColor('#F8FAFB'),
-                borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(13.0),
-                  bottomLeft: Radius.circular(13.0),
-                  topLeft: Radius.circular(13.0),
-                  topRight: Radius.circular(13.0),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16, top: 8, bottom: 8),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppTheme.nearlyWhite,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(38.0),
+                  ),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        offset: const Offset(0, 2),
+                        blurRadius: 8.0),
+                  ],
                 ),
-              ),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 16, right: 16),
-                      child: TextFormField(
-                        style: TextStyle(
-                          fontFamily: 'WorkSans',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: DesignCourseAppTheme.nearlyBlue,
-                        ),
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: 'Search for course',
-                          border: InputBorder.none,
-                          helperStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: HexColor('#B9BABC'),
-                          ),
-                          labelStyle: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                            letterSpacing: 0.2,
-                            color: HexColor('#B9BABC'),
-                          ),
-                        ),
-                        onEditingComplete: () {},
-                      ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 16, right: 16, top: 4, bottom: 4),
+                  child: TextField(
+                    onChanged: (String txt) {},
+                    style: const TextStyle(
+                      fontSize: 15,
+                    ),
+                    cursorColor: Color(0xff132137),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Choose your course',
                     ),
                   ),
-                  SizedBox(
-                    width: 60,
-                    height: 60,
-                    child: IconButton(
-                      color: DesignCourseAppTheme.darkerText,
-                      icon: Icon(Icons.search, color: HexColor('#B9BABC')),
-                      onPressed: () {
-                        Navigator.push<dynamic>(
-                          context,
-                          MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => FiltersScreen(),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(2),
-            child: Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: DesignCourseAppTheme.nearlyBlue,
-                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          Container(
+            decoration: BoxDecoration(
+              color: Color(0xff132137),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(38.0),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Icon(
-                  Icons.sort,
-                  color: DesignCourseAppTheme.nearlyWhite,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.grey.withOpacity(0.4),
+                    offset: const Offset(0, 2),
+                    blurRadius: 8.0),
+              ],
+            ),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(32.0),
+                ),
+                onTap: () {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child:
+                      Icon(Icons.search, size: 20, color: AppTheme.nearlyWhite),
                 ),
               ),
             ),
-          )
+          ),
+          // SizedBox(
+          //   width: 60,
+          //   height: 60,
+          //   child: IconButton(
+          //     color: DesignCourseAppTheme.darkerText,
+          //     icon: Icon(Icons.search, color: HexColor('#B9BABC')),
+          //     onPressed: () {
+          //       Navigator.push<dynamic>(
+          //         context,
+          //         MaterialPageRoute<dynamic>(
+          //           builder: (BuildContext context) => FiltersScreen(),
+          //         ),
+          //       );
+          //     },
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.all(2),
+          //   child: Container(
+          //     alignment: Alignment.center,
+          //     decoration: BoxDecoration(
+          //       color: DesignCourseAppTheme.nearlyBlue,
+          //       borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          //     ),
+          //     child: Padding(
+          //       padding: const EdgeInsets.all(10.0),
+          //       child: Icon(
+          //         Icons.sort,
+          //         color: DesignCourseAppTheme.nearlyWhite,
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
