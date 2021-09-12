@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../app_theme.dart';
 
-class SplashView extends StatefulWidget {
+class ClearHeadView extends StatefulWidget {
   final AnimationController animationController;
 
-  const SplashView({Key? key, required this.animationController})
+  const ClearHeadView({Key? key, required this.animationController})
       : super(key: key);
 
   @override
-  _SplashViewState createState() => _SplashViewState();
+  _ClearHeadViewState createState() => _ClearHeadViewState();
 }
 
-class _SplashViewState extends State<SplashView> {
+class _ClearHeadViewState extends State<ClearHeadView> {
   @override
   Widget build(BuildContext context) {
     final _introductionanimation =

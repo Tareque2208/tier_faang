@@ -1,5 +1,3 @@
-import 'package:tier_faang/components/filters_screen.dart';
-import 'package:tier_faang/main.dart';
 import 'package:flutter/material.dart';
 import 'package:tier_faang/screens/design_course/category_list_view.dart';
 import 'package:tier_faang/screens/design_course/course_info_screen.dart';
@@ -7,12 +5,12 @@ import 'package:tier_faang/screens/design_course/popular_course_list_view.dart';
 import '../../app_theme.dart';
 import 'design_course_app_theme.dart';
 
-class DesignCourseHomeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   CategoryType categoryType = CategoryType.ui;
 
   @override
@@ -57,7 +55,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 18, right: 16),
           child: Text(
-            'Category',
+            'Recommended For You',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,
@@ -67,30 +65,30 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
             ),
           ),
         ),
-        const SizedBox(
-          height: 16,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16),
-          child: Row(
-            children: <Widget>[
-              getButtonUI(CategoryType.ui, categoryType == CategoryType.ui),
-              const SizedBox(
-                width: 16,
-              ),
-              getButtonUI(
-                  CategoryType.coding, categoryType == CategoryType.coding),
-              const SizedBox(
-                width: 16,
-              ),
-              getButtonUI(
-                  CategoryType.basic, categoryType == CategoryType.basic),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
+        // const SizedBox(
+        //   height: 16,
+        // ),
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 16, right: 16),
+        //   child: Row(
+        //     children: <Widget>[
+        //       getButtonUI(CategoryType.ui, categoryType == CategoryType.ui),
+        //       const SizedBox(
+        //         width: 16,
+        //       ),
+        //       getButtonUI(
+        //           CategoryType.coding, categoryType == CategoryType.coding),
+        //       const SizedBox(
+        //         width: 16,
+        //       ),
+        //       getButtonUI(
+        //           CategoryType.basic, categoryType == CategoryType.basic),
+        //     ],
+        //   ),
+        // ),
+        // const SizedBox(
+        //   height: 16,
+        // ),
         CategoryListView(
           callBack: () {
             moveTo();

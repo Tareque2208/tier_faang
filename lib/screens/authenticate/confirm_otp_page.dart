@@ -70,8 +70,8 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
     Widget verifyButton = Center(
       child: InkWell(
         onTap: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => DesignCourseHomeScreen()));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => HomeScreen()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width / 3,

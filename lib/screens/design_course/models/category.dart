@@ -73,5 +73,19 @@ class Category {
       money: 208,
       rating: 4.9,
     ),
+    Category(
+      imagePath: 'assets/design_course/interFace4.png',
+      title: 'Web Design Course',
+      lessonCount: 28,
+      money: 208,
+      rating: 4.9,
+    ),
+    Category(
+      imagePath: 'assets/design_course/interFace4.png',
+      title: 'Web Design Course',
+      lessonCount: 28,
+      money: 208,
+      rating: 4.9,
+    ),
   ];
 }

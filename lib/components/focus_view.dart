@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../app_theme.dart';
 
-class RelaxView extends StatelessWidget {
+class FocusView extends StatelessWidget {
   final AnimationController animationController;
 
-  const RelaxView({Key? key, required this.animationController})
+  const FocusView({Key? key, required this.animationController})
       : super(key: key);
 
   @override

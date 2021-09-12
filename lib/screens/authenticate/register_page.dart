@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:tier_faang/screens/authenticate/welcome_back_page.dart';
+import 'package:tier_faang/screens/authenticate/sign_in.dart';
 import 'package:tier_faang/screens/design_course/design_course_app_theme.dart';
-
-import 'forgot_password_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -13,14 +11,14 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController =
       TextEditingController(text: 'example@email.com');
-  TextEditingController usernameController =
-      TextEditingController(text: 'username');
+  // TextEditingController usernameController =
+  //     TextEditingController(text: 'username');
 
   TextEditingController passwordController =
       TextEditingController(text: '12345678');
 
-  TextEditingController cmfPasswordController =
-      TextEditingController(text: '12345678');
+  // TextEditingController cmfPasswordController =
+  //     TextEditingController(text: '12345678');
 
   @override
   Widget build(BuildContext context) {
@@ -108,13 +106,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(fontSize: 16.0),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextField(
-                      controller: usernameController,
-                      style: TextStyle(fontSize: 16.0),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 8.0),
+                  //   child: TextField(
+                  //     controller: usernameController,
+                  //     style: TextStyle(fontSize: 16.0),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: TextField(
@@ -123,14 +121,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       obscureText: true,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextField(
-                      controller: cmfPasswordController,
-                      style: TextStyle(fontSize: 16.0),
-                      obscureText: true,
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 8.0),
+                  //   child: TextField(
+                  //     controller: cmfPasswordController,
+                  //     style: TextStyle(fontSize: 16.0),
+                  //     obscureText: true,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -156,13 +154,16 @@ class _RegisterPageState extends State<RegisterPage> {
               icon: Icon(Icons.find_replace),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => WelcomeBackPage()));
+                    .push(MaterialPageRoute(builder: (_) => SignInPage()));
               },
               color: DesignCourseAppTheme.darkerText,
             ),
             IconButton(
                 icon: Icon(Icons.find_replace),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => SignInPage()));
+                },
                 color: DesignCourseAppTheme.darkerText),
           ],
         )

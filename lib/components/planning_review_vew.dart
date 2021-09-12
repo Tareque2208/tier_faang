@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../app_theme.dart';
 
-class CareView extends StatelessWidget {
+class PlanningReviewVew extends StatelessWidget {
   final AnimationController animationController;
 
-  const CareView({Key? key, required this.animationController})
+  const PlanningReviewVew({Key? key, required this.animationController})
       : super(key: key);
 
   @override
@@ -15,8 +15,8 @@ class CareView extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: Interval(
-        0.2,
         0.4,
+        0.6,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -25,39 +25,39 @@ class CareView extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: Interval(
-        0.4,
         0.6,
-        curve: Curves.fastOutSlowIn,
-      ),
-    ));
-    final _relaxFirstHalfAnimation =
-        Tween<Offset>(begin: Offset(2, 0), end: Offset(0, 0))
-            .animate(CurvedAnimation(
-      parent: animationController,
-      curve: Interval(
-        0.2,
-        0.4,
-        curve: Curves.fastOutSlowIn,
-      ),
-    ));
-    final _relaxSecondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-2, 0))
-            .animate(CurvedAnimation(
-      parent: animationController,
-      curve: Interval(
-        0.4,
-        0.6,
+        0.8,
         curve: Curves.fastOutSlowIn,
       ),
     ));
 
+    final _moodFirstHalfAnimation =
+        Tween<Offset>(begin: Offset(2, 0), end: Offset(0, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: Interval(
+        0.4,
+        0.6,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+    final _moodSecondHalfAnimation =
+        Tween<Offset>(begin: Offset(0, 0), end: Offset(-2, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: Interval(
+        0.6,
+        0.8,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
     final _imageFirstHalfAnimation =
         Tween<Offset>(begin: Offset(4, 0), end: Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
       curve: Interval(
-        0.2,
         0.4,
+        0.6,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -66,8 +66,8 @@ class CareView extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: Interval(
-        0.4,
         0.6,
+        0.8,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -81,6 +81,25 @@ class CareView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                "Planning & Review",
+                style: AppTheme.textTheme.headline4,
+              ),
+              SlideTransition(
+                position: _moodFirstHalfAnimation,
+                child: SlideTransition(
+                  position: _moodSecondHalfAnimation,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        left: 64, right: 64, top: 16, bottom: 16),
+                    child: Text(
+                      "Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore",
+                      textAlign: TextAlign.center,
+                      style: AppTheme.textTheme.bodyText1,
+                    ),
+                  ),
+                ),
+              ),
               SlideTransition(
                 position: _imageFirstHalfAnimation,
                 child: SlideTransition(
@@ -88,29 +107,10 @@ class CareView extends StatelessWidget {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width / 1.2,
                     child: Image.asset(
-                      'assets/introduction_animation/01.png',
+                      'assets/introduction_animation/03.png',
                       fit: BoxFit.cover,
                     ),
                   ),
-                ),
-              ),
-              SlideTransition(
-                position: _relaxFirstHalfAnimation,
-                child: SlideTransition(
-                  position: _relaxSecondHalfAnimation,
-                  child: Text(
-                    "Determination",
-                    style: AppTheme.textTheme.headline4,
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 64, right: 64, bottom: 16, top: 16),
-                child: Text(
-                  "Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore",
-                  textAlign: TextAlign.center,
-                  style: AppTheme.textTheme.bodyText1,
                 ),
               ),
             ],

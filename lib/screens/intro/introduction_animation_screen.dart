@@ -1,12 +1,12 @@
-import 'package:tier_faang/components/care_view.dart';
+import 'package:tier_faang/components/determination_view.dart';
 import 'package:tier_faang/components/center_next_button.dart';
-import 'package:tier_faang/components/mood_diary_vew.dart';
-import 'package:tier_faang/components/relax_view.dart';
-import 'package:tier_faang/components/splash_view.dart';
+import 'package:tier_faang/components/planning_review_vew.dart';
+import 'package:tier_faang/components/focus_view.dart';
+import 'package:tier_faang/components/clearhead_view.dart';
 import 'package:tier_faang/components/top_back_skip_view.dart';
 import 'package:tier_faang/components/welcome_view.dart';
 import 'package:flutter/material.dart';
-import 'package:tier_faang/screens/wrapper.dart';
+import 'package:tier_faang/screens/authenticate/register_page.dart';
 
 class IntroductionAnimationScreen extends StatefulWidget {
   const IntroductionAnimationScreen({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _IntroductionAnimationScreenState
   @override
   void initState() {
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 8));
+        AnimationController(vsync: this, duration: Duration(seconds: 6));
     _animationController?.animateTo(0.0);
     super.initState();
   }
@@ -42,16 +42,16 @@ class _IntroductionAnimationScreenState
       body: ClipRect(
         child: Stack(
           children: [
-            SplashView(
+            ClearHeadView(
               animationController: _animationController!,
             ),
-            RelaxView(
+            FocusView(
               animationController: _animationController!,
             ),
-            CareView(
+            DeterminationView(
               animationController: _animationController!,
             ),
-            MoodDiaryVew(
+            PlanningReviewVew(
               animationController: _animationController!,
             ),
             WelcomeView(
@@ -73,8 +73,7 @@ class _IntroductionAnimationScreenState
   }
 
   void _onSkipClick() {
-    _animationController?.animateTo(0.8,
-        duration: Duration(milliseconds: 1200));
+    _animationController?.animateTo(0.8, duration: Duration(milliseconds: 300));
   }
 
   void _onBackClick() {
@@ -128,7 +127,7 @@ class _IntroductionAnimationScreenState
     //Navigating to wrapper class.
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Wrapper()),
+      MaterialPageRoute(builder: (context) => RegisterPage()),
     );
     // Navigator.pop(context);
   }
